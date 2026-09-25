@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Perfect DOS VGA 437", "Courier New", "Lucida Console", monospace;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never;
+  text-rendering: geometricPrecision;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.35;
+  z-index: 100;
+}
+
+.boot-screen {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px 28px 130px;
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.85),
+    0 0 6px rgba(200, 220, 255, 0.15);
+}
+
+.bios-header p,
+.system-status p,
+.instructions,
+.boot-menu h2,
+.menu-item {
+  white-space: pre;
+}
+
+.bios-header {
+  margin-bottom: 10px;
+}
+
+.system-status {
+  margin-bottom: 22px;
+}
+
+.initializing .dots {
+  animation: blink-dots 1s step-end infinite;
+}
+
+@keyframes blink-dots {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.instructions {
+  margin-bottom: 20px;
+}
+
+.boot-menu h2 {
+  font-size: inherit;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.boot-menu h2:not(:first-child) {
+  margin-top: 16px;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-item {
+  display: block;
+  width: fit-content;
+  padding: 1px 6px;
+  margin: 0;
+  cursor: default;
+  line-height: 1.2;
+}
+
+.menu-item.selected {
+  background: #fff;
+  color: #000;
+  text-shadow: none;
+}
+
+.boot-footer {
+  position: fixed;
+  left: 28px;
+  bottom: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo {
+  position: relative;
+  display: block;
+  line-height: 0;
+  text-shadow: none;
+  filter: none;
+}
+
+.logo-svg {
+  display: block;
+  width: clamp(280px, 52vw, 520px);
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .boot-screen {
+    padding: 16px 16px 110px;
+    font-size: 14px;
+  }
+
+  .boot-footer {
+    left: 16px;
+    bottom: 16px;
+  }
+}

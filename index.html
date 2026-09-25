@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoenixBIOS — Lokkisan</title>
+  <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet">
+  <link rel="stylesheet" href="css/boot.css">
+</head>
+<body>
+  <div class="boot-screen">
+    <header class="bios-header">
+      <p>PhoenixBIOS 1.4 Release 6.0</p>
+      <p>Copyright 1985-2001 Phoenix Technologies Ltd.</p>
+      <p>All Rights Reserved</p>
+      <p>Copyright 2001-2003 VMware, Inc.</p>
+      <p>VMware BIOS build 314</p>
+    </header>
+
+    <section class="system-status">
+      <p>ATAPI CD-ROM: VMware Virtual IDECDROM Drive</p>
+      <p class="initializing">Initializing<span class="dots">..</span></p>
+      <p>User: <span id="user-name">unknown</span></p>
+      <p>IP: <span id="user-ip">detecting...</span></p>
+      <p>System: <span id="user-system">detecting...</span></p>
+    </section>
+
+    <p class="instructions">
+      Use the &uarr;(Up) and &darr;(Down) key to move the pointer to desired boot device.<br>
+      Press (Enter) to attempt to boot or ESC to cancel.
+    </p>
+
+    <nav class="boot-menu" aria-label="Boot menu">
+      <h2>BOOT OPTIONS:</h2>
+      <ul id="boot-options" class="menu-list"></ul>
+
+      <h2>OTHER OPTIONS:</h2>
+      <ul id="other-options" class="menu-list"></ul>
+    </nav>
+
+    <footer class="boot-footer">
+      <div class="logo" aria-hidden="true"></div>
+    </footer>
+  </div>
+
+  <script src="js/logo.js"></script>
+  <script src="js/boot.js"></script>
+</body>
+</html>
